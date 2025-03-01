@@ -53,7 +53,7 @@ const ContactTextArea = ({ row, placeholder, name, defaultValue }: any) => {
           rows={row}
           placeholder={placeholder}
           name={name}
-          className='w-full resize-none rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary dark:border-gray-900 dark:bg-darkBg-900 dark:text-dark-6 backdrop-filter backdrop-blur-2xl bg-opacity-5 dark:backdrop-blur-2xl dark:bg-opacity-30'
+          className='bg-slate-50 w-full resize-none rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary dark:border-gray-900 dark:bg-darkBg-900 dark:text-dark-6 backdrop-filter backdrop-blur-2xl bg-opacity-5 dark:backdrop-blur-2xl dark:bg-opacity-30'
           defaultValue={defaultValue}
         />
       </div>
@@ -69,7 +69,7 @@ const ContactInputBox = ({ type, placeholder, name }: any) => {
           type={type}
           placeholder={placeholder}
           name={name}
-          className='w-full rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary dark:border-gray-900 dark:bg-darkBg-900 dark:text-dark-6 backdrop-filter backdrop-blur-2xl bg-opacity-5 dark:backdrop-blur-2xl dark:bg-opacity-30'
+          className='bg-slate-50 w-full rounded border border-stroke px-[14px] py-3 outline-none focus:border-primary dark:border-gray-900 dark:bg-darkBg-900 dark:text-dark-6 backdrop-filter backdrop-blur-2xl bg-opacity-5 dark:backdrop-blur-2xl dark:bg-opacity-30'
         />
       </div>
     </>

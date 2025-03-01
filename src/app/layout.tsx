@@ -10,16 +10,17 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Ajay Verma',
   description: 'Software Engineer',
+  /* Favicon */
   icons: [
     {
       media: '(prefers-color-scheme: dark)',
-      url: '../../public/assets/icons/av-logo.svg',
-      href: '../../public/assets/icons/av-logo.svg',
+      url: '/assets/icons/av-logo.svg',
+      href: '/assets/icons/av-logo.svg',
     },
     {
       media: '(prefers-color-scheme: light)',
-      url: '../../public/assets/icons/av-logo.svg',
-      href: '../../public/assets/icons/av-logo.svg',
+      url: '/assets/icons/av-logo.svg',
+      href: '/assets/icons/av-logo.svg',
     },
   ],
 };

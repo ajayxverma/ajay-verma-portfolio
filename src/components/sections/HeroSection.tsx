@@ -10,15 +10,7 @@ export default function HeroSection() {
     <div className='bg-white dark:bg-inherit pb-6 sm:pb-8 lg:pb-12' id='hero'>
       <div className='opacity-30 z-[-10]'>
         <ul className='background'>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          {/* Inrease the LI tag to increase the no of background boxes */}
           <li></li>
           <li></li>
           <li></li>
