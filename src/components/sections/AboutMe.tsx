@@ -1,9 +1,11 @@
+'use client';
 import React from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { LiaFileDownloadSolid } from 'react-icons/lia';
 import Image from 'next/image';
 import SectionHeading from '../SectionHeading';
 import profileImg from '../../../public/assets/images/profile-anime.svg';
+import { handleDownloadResume } from '@/utils/downlaodResume';
 
 const AboutMe = () => {
   const ProjectListHeading = {
@@ -65,7 +67,9 @@ const AboutMe = () => {
               href='#'
               className='inline-flex items-center justify-center w-full px-4 text-sm py-2.5 mt-4 overflow-hidden text-white transition-colors duration-300 bg-primary-800 rounded-lg shadow sm:w-auto sm:mx-2 sm:mt-0 hover:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80'
             >
-              <span className='mx-2'>Download Resume</span>
+              <span className='mx-2' onClick={handleDownloadResume}>
+                Download Resume
+              </span>
               <LiaFileDownloadSolid size={20} />
             </a>
           </div>

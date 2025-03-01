@@ -6,6 +6,7 @@ import { CiLight } from 'react-icons/ci';
 import { MdDarkMode } from 'react-icons/md';
 import { headerMenuList } from '../config/side-data.config';
 import headerIcon from '../../public/assets/icons/av-logo.svg';
+import { handleDownloadResume } from '@/utils/downlaodResume';
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -43,27 +44,6 @@ const Header = () => {
       document.body.removeEventListener('click', handleClickOutside);
     };
   }, []);
-
-  const handleDownload = async () => {
-    try {
-      const fileUrl =
-        'https://drive.google.com/uc?export=download&id=1B_Y8yuKqnmZ-qWGWFkRWkC3WY_P_0rvw';
-
-      // Create a link element
-      const link = document.createElement('a');
-      link.href = fileUrl;
-      link.download = 'Ajay-Verma.pdf'; // Specify the filename here
-
-      // Programmatically click the link to trigger the download
-      document.body.appendChild(link);
-      link.click();
-
-      // Cleanup: remove the link
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error('Error downloading file:', error);
-    }
-  };
 
   return (
     <header className='bg-transparent sticky top-2 z-10'>
@@ -312,7 +292,7 @@ const Header = () => {
           <a
             href='#'
             className='hidden lg:block text-gray dark:text-white-600 rounded-lg border-gray-100 opacity-100 md:border-0 px-3 py-2 md:hover:bg-blue-100/40 md:dark:hover:bg-gray-700/40 md:hover:text-blue-700'
-            onClick={handleDownload}
+            onClick={handleDownloadResume}
           >
             Resume <span aria-hidden='true'>&rarr;</span>
           </a>
@@ -441,7 +421,7 @@ const Header = () => {
               </div>
               <div className='py-6'>
                 <a
-                  onClick={handleDownload}
+                  onClick={handleDownloadResume}
                   href='#'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-blue-200/30 ease-in-out duration-100 dark:text-white dark:hover:bg-blue-300/30 hover:backdrop-blur-3xl'
                 >

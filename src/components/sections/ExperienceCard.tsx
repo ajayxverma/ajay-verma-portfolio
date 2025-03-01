@@ -13,16 +13,12 @@ interface VerticalTabProps {
 
 const TabButton: React.FC<VerticalTabProps> = ({ title, sequence, onClick, activeTab }) => {
   const isActive = activeTab === sequence;
-  const [checked, setChecked] = useState(false);
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked);
-  };
   return (
     <li id={sequence} onClick={onClick}>
       <div className='relative'>
         {isActive ? (
           <input
-            onChange={handleChange}
+            onChange={() => {}}
             checked
             hidden
             className='peer'

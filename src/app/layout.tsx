@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   icons: [
     {
       media: '(prefers-color-scheme: dark)',
-      url: '/assets/icons/av-logo.svg',
-      href: '/assets/icons/av-logo.svg',
+      url: './assets/icons/av-logo.svg',
+      href: './assets/icons/av-logo.svg',
     },
     {
       media: '(prefers-color-scheme: light)',
-      url: '/assets/icons/av-logo.svg',
-      href: '/assets/icons/av-logo.svg',
+      url: './assets/icons/av-logo.svg',
+      href: './assets/icons/av-logo.svg',
     },
   ],
 };
