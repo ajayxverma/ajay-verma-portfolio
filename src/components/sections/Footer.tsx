@@ -6,7 +6,7 @@ import { headerMenuList, socialLinks } from '@/config/side-data.config';
 const Footer = () => {
   return (
     <div className='bg-white pt-4 sm:pt-10 lg:pt-12 dark:bg-inherit'>
-      <footer className='mx-auto max-w-screen-2xl px-4 md:px-8'>
+      <footer className='mx-auto max-w-screen-2xl px-4 md:px-8 backdrop-filter backdrop-blur-2xl bg-opacity-5 dark:backdrop-blur-2xl dark:bg-opacity-70'>
         <div className='flex flex-col items-center border-t dark:border-gray-600 pt-6'>
           <nav className='mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6'>
             {headerMenuList.map((menu, index) => {

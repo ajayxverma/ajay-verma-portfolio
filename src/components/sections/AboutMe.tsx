@@ -14,7 +14,7 @@ const AboutMe = () => {
     <div className='bg-white dark:bg-inherit md:mx-24' id='about'>
       <SectionHeading {...ProjectListHeading} />
 
-      <div className='container flex flex-col items-center px-4 py-16 mx-auto xl:flex-row'>
+      <div className='backdrop-filter backdrop-blur-sm bg-opacity-100 container flex flex-col items-center px-4 py-16 mx-auto xl:flex-row'>
         <div className='flex items-center justify-center xl:w-1/2'>
           <Image
             src={profileImg}

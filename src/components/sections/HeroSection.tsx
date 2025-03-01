@@ -1,16 +1,32 @@
-import React from 'react';
-import { socialLinks } from '../config/side-data.config';
+import { socialLinks } from '../../config/side-data.config';
 import Image from 'next/image';
-import headerIcon from '../../public/assets/icons/av-logo.svg';
-import heroBgImage from '../../public/assets/images/bg-home2.svg';
-import SocialHorizontal from './SocialHorizontal';
-import TwoButton from './buttons/TwoButton';
+import headerIcon from '../../../public/assets/icons/av-logo.svg';
+import SocialHorizontal from '../SocialHorizontal';
+import TwoButton from '../buttons/TwoButton';
+import '../../css/bg-animation-key-frams.css';
 
 export default function HeroSection() {
   return (
     <div className='bg-white dark:bg-inherit pb-6 sm:pb-8 lg:pb-12' id='hero'>
       <div className='opacity-30 z-[-10]'>
-        <Image src={heroBgImage} alt='Background' layout='fill' objectFit='cover' priority={true} />
+        <ul className='background'>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
       <div className='mx-auto max-w-screen-2xl px-4 md:px-8 backdrop-blur-sm bg-opacity-10'>
         <section className='flex flex-col items-center'>

@@ -14,8 +14,7 @@ const Header = () => {
   function toggleMenu() {
     setMenuToggle(!menuToggle);
   }
-  useEffect(() => {
-  }, [theme]);
+  useEffect(() => {}, [theme]);
 
   const [showSubMenu, setShowSubMenu] = useState(-1);
   const submenuRef = useRef<HTMLDivElement>(null);
@@ -47,26 +46,20 @@ const Header = () => {
 
   const handleDownload = async () => {
     try {
-      const fileUrl = '/public/data/Ajay-Verma.pdf';
-      // Fetch the file from the imported URL
-      const response = await fetch(fileUrl);
-      const blob = await response.blob();
-
-      // Create a temporary URL for the Blob object
-      const url = window.URL.createObjectURL(blob);
+      const fileUrl =
+        'https://drive.google.com/uc?export=download&id=1B_Y8yuKqnmZ-qWGWFkRWkC3WY_P_0rvw';
 
       // Create a link element
       const link = document.createElement('a');
-      link.href = url;
-      link.download = 'filename.pdf'; // Specify the filename here
+      link.href = fileUrl;
+      link.download = 'Ajay-Verma.pdf'; // Specify the filename here
 
       // Programmatically click the link to trigger the download
       document.body.appendChild(link);
       link.click();
 
-      // Cleanup: remove the link and revoke the URL
+      // Cleanup: remove the link
       document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
     } catch (error) {
       console.error('Error downloading file:', error);
     }

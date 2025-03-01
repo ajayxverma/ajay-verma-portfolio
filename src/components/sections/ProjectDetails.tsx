@@ -106,7 +106,7 @@ const ProjectsDetails = () => {
             return (
               <div
                 key={index}
-                className='group relative hover:z-[2] sm:-mx-8 p-4 sm:p-8  rounded-3xl bf  border border-transparent hover:border-gray-100 dark:hover:border-gray-700 dark:hover:bg-transparent shadow-2xl shadow-transparent hover:shadow-gray-600/10 dark:hover:shadow-blue-400/20 bg-inherit sm:gap-8 sm:flex sm:items-center transition duration-300'
+                className='group relative hover:z-[2] sm:-mx-8 p-4 sm:p-8  rounded-3xl bf  border border-transparent hover:border-gray-100 dark:hover:border-gray-700 dark:hover:bg-transparent shadow-2xl shadow-transparent hover:shadow-gray-600/10 dark:hover:shadow-blue-400/20 bg-inherit sm:gap-8 sm:flex sm:items-center transition duration-300 backdrop-filter backdrop-blur-2xl bg-opacity-5 hover:shadow-2xl dark:backdrop-blur-3xl dark:bg-opacity-30'
               >
                 {project.imageOnRight || isMobile ? (
                   <>

@@ -6,7 +6,7 @@ const ServiceCard = ({ techStackData }: { techStackData: TechStackType[] }) => {
       {techStackData.map((techStack, index) => (
         <div
           key={index}
-          className='group relative bg-white dark:bg-black transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10'
+          className='group relative bg-white dark:bg-black transition hover:z-[1] bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-5 hover:shadow-2xl dark:backdrop-blur-2xl dark:bg-opacity-30 hover:shadow-gray-600/10'
         >
           <div className='flex flex-col h-full justify-between space-y-8 py-12 p-8'>
             <div className='space-y-6'>

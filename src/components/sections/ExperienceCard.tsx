@@ -80,7 +80,7 @@ const ExperienceCard = () => {
       <SectionHeading {...ProjectListHeading} />
       <div className="m-auto mt-12 items-center justify-center space-y-4 lg:flex lg:space-y-0 lg:space-x-2 overflow-hidden">
         <div className="group relative m-auto">
-          <div className="relative sm:flex justify-center max-w-screen-lg">
+          <div className="relative sm:flex justify-center max-w-screen-lg backdrop-filter backdrop-blur-2xl bg-opacity-5 rounded-3xl dark:backdrop-blur-2xl dark:bg-opacity-5">
             <div className="sm:mt-0 sm:w-4/12 sm:pb-0">
               <div className="relative h-full after:absolute after:right-0 after:bottom-2 after:my-auto after:h-0.5 after:w-full after:rounded-full after:bg-gray-200 dark:after:bg-gray-700 sm:pt-0 sm:after:inset-y-0 sm:after:h-[85%] sm:after:w-0.5">
                 <div className="relative -mt-1 h-full overflow-auto pt-7 pb-6 sm:-mr-3 sm:pr-3">

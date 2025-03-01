@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import { IconTree, IconType } from 'react-icons';
+import { IconType } from 'react-icons';
 
 export interface ProjectType {
   startDate?: string;

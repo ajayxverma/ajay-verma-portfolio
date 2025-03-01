@@ -5,8 +5,8 @@ import { OtherProData } from '@/types/components.types';
 
 const ProjectCard = (OtherProData: OtherProData) => {
   return (
-    <div className='flex flex-col justify-center duration-500 hover:-translate-y-2 ease-in-out '>
-      <div className='group h-full flex flex-col justify-between px-4 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white border-solid border-[1px] border-gray-100 dark:border-gray-900 border-1 rounded-lg hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:shadow-blue-400/20 dark:bg-inherit sm:align-middle sm:max-w-sm sm:w-full sm:p-6'>
+    <div className='flex flex-col justify-center duration-500 hover:-translate-y-2 ease-in-out backdrop-filter backdrop-blur-2xl bg-opacity-5 hover:shadow-2xl dark:backdrop-blur-3xl dark:bg-opacity-30 '>
+      <div className='group h-full flex flex-col justify-between px-4 pb-4 overflow-hidden text-left align-bottom transition-all transform border-solid border-[1px] border-gray-100 dark:border-gray-900 border-1 rounded-lg hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:shadow-blue-400/20 dark:bg-inherit sm:align-middle sm:max-w-sm sm:w-full sm:p-6'>
         <div>
           {/* <img
               className="object-cover w-full h-48 rounded-md"
