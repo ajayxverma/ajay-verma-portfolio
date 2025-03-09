@@ -5,7 +5,7 @@ import { LiaFileDownloadSolid } from 'react-icons/lia';
 import Image from 'next/image';
 import SectionHeading from '../SectionHeading';
 import profileImg from '../../../public/assets/images/profile-anime.svg';
-import { handleDownloadResume } from '@/utils/downlaodResume';
+import { handleDownloadResume } from '../../utils/downlaodResume';
 
 const AboutMe = () => {
   const ProjectListHeading = {
