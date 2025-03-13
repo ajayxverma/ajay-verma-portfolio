@@ -7,10 +7,13 @@ import { MdDarkMode } from 'react-icons/md';
 import { headerMenuList } from '../config/side-data.config';
 import headerIcon from '../../public/assets/icons/av-logo.svg';
 import { handleDownloadResume } from '@/utils/downlaodResume';
+import { ToastContainer, toast } from 'react-toastify';
+import loadingSvg from '../../public/assets/gifs/loadingIcon.svg';
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
   const [menuToggle, setMenuToggle] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   function toggleMenu() {
     setMenuToggle(!menuToggle);
@@ -19,6 +22,37 @@ const Header = () => {
 
   const [showSubMenu, setShowSubMenu] = useState(-1);
   const submenuRef = useRef<HTMLDivElement>(null);
+
+  const handleDownload = () => {
+    setIsDownloading(true);
+    try {
+      handleDownloadResume();
+    } catch (error) {
+      console.log(error);
+      toast.error('Error Downaloding Resume Please try again.', {
+        position: 'bottom-right',
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+    } finally {
+      setIsDownloading(false);
+      toast.success('Resume Downloaded successfully! 💗', {
+        position: 'bottom-right',
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+    }
+  };
 
   const handleMouseEnter = (index: number) => {
     if (showSubMenu === index) {
@@ -47,6 +81,7 @@ const Header = () => {
 
   return (
     <header className='bg-transparent sticky top-2 z-10'>
+      <ToastContainer />
       <nav
         className='mx-auto flex max-w-[97%] lg:max-w-[89%] items-center justify-between p-3 rounded-xl  lg:px-8 bg-blue-200/20 dark:bg-black/20   backdrop-blur-3xl brightness-100 text-opacity-100'
         aria-label='Global'
@@ -292,9 +327,15 @@ const Header = () => {
           <a
             href='#'
             className='hidden lg:block text-gray dark:text-white-600 rounded-lg border-gray-100 opacity-100 md:border-0 px-3 py-2 md:hover:bg-blue-100/40 md:dark:hover:bg-gray-700/40 md:hover:text-blue-700'
-            onClick={handleDownloadResume}
+            onClick={handleDownload}
           >
-            Resume <span aria-hidden='true'>&rarr;</span>
+            {isDownloading ? (
+              <Image src={loadingSvg} alt='Header Icon' height='30' width='30' className='mx-4' />
+            ) : (
+              <>
+                Resume <span aria-hidden='true'>&rarr;</span>
+              </>
+            )}
           </a>
         </div>
       </nav>
@@ -421,11 +462,29 @@ const Header = () => {
               </div>
               <div className='py-6'>
                 <a
-                  onClick={handleDownloadResume}
+                  onClick={handleDownload}
                   href='#'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-blue-200/30 ease-in-out duration-100 dark:text-white dark:hover:bg-blue-300/30 hover:backdrop-blur-3xl'
                 >
-                  Download Resume
+                  <a
+                    href='#'
+                    className='hidden lg:block text-gray dark:text-white-600 rounded-lg border-gray-100 opacity-100 md:border-0 px-3 py-2 md:hover:bg-blue-100/40 md:dark:hover:bg-gray-700/40 md:hover:text-blue-700'
+                    onClick={handleDownload}
+                  >
+                    {isDownloading ? (
+                      <Image
+                        src={loadingSvg}
+                        alt='Header Icon'
+                        height='30'
+                        width='30'
+                        className='mx-4'
+                      />
+                    ) : (
+                      <>
+                        Resume <span aria-hidden='true'>&rarr;</span>
+                      </>
+                    )}
+                  </a>
                 </a>
               </div>
             </div>
