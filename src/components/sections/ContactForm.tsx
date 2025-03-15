@@ -39,11 +39,11 @@ const ContactForm = () => {
         }
       });
       setErrors(validationErrors);
-      setIsLoading(false); 
+      setIsLoading(false);
       return;
     }
     try {
-      const response = await fetch('/api/email', {
+      const response = await fetch('https://ajay-verma-portfolio-service.vercel.app/v1/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
