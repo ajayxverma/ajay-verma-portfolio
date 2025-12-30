@@ -14,11 +14,15 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
   const [menuToggle, setMenuToggle] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   function toggleMenu() {
     setMenuToggle(!menuToggle);
   }
-  useEffect(() => {}, [theme]);
 
   const [showSubMenu, setShowSubMenu] = useState(-1);
   const submenuRef = useRef<HTMLDivElement>(null);
@@ -295,12 +299,14 @@ const Header = () => {
         </div>
         {/* Theme Button */}
         <div className='flex items-center gap-2 lg:flex lg:flex-1 lg:justify-end'>
-          <a
-            onClick={() => (theme === 'dark' ? setTheme('light') : setTheme('dark'))}
-            className='text-gray cursor-pointer dark:text-white-600 border-[1px] dark:border-gray-900 rounded-lg opacity-100 md:border-0 block px-3 py-2 md:hover:bg-blue-100/40 md:hover:text-blue-700 bg-blue-200/30'
-          >
-            {theme === 'light' ? <MdDarkMode size={20} /> : <CiLight size={20} />}
-          </a>
+          {mounted && (
+            <a
+              onClick={() => (theme === 'dark' ? setTheme('light') : setTheme('dark'))}
+              className='text-gray cursor-pointer dark:text-white-600 border-[1px] dark:border-gray-900 rounded-lg opacity-100 md:border-0 block px-3 py-2 md:hover:bg-blue-100/40 md:hover:text-blue-700 bg-blue-200/30'
+            >
+              {theme === 'light' ? <MdDarkMode size={20} /> : <CiLight size={20} />}
+            </a>
+          )}
           <div className='flex lg:hidden'>
             <button
               type='button'
@@ -466,25 +472,19 @@ const Header = () => {
                   href='#'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-blue-200/30 ease-in-out duration-100 dark:text-white dark:hover:bg-blue-300/30 hover:backdrop-blur-3xl'
                 >
-                  <a
-                    href='#'
-                    className='hidden lg:block text-gray dark:text-white-600 rounded-lg border-gray-100 opacity-100 md:border-0 px-3 py-2 md:hover:bg-blue-100/40 md:dark:hover:bg-gray-700/40 md:hover:text-blue-700'
-                    onClick={handleDownload}
-                  >
-                    {isDownloading ? (
-                      <Image
-                        src={loadingSvg}
-                        alt='Header Icon'
-                        height='30'
-                        width='30'
-                        className='mx-4'
-                      />
-                    ) : (
-                      <>
-                        Resume <span aria-hidden='true'>&rarr;</span>
-                      </>
-                    )}
-                  </a>
+                  {isDownloading ? (
+                    <Image
+                      src={loadingSvg}
+                      alt='Header Icon'
+                      height='30'
+                      width='30'
+                      className='mx-4'
+                    />
+                  ) : (
+                    <>
+                      Resume <span aria-hidden='true'>&rarr;</span>
+                    </>
+                  )}
                 </a>
               </div>
             </div>
