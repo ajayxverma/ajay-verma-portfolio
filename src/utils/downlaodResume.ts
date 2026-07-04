@@ -1,7 +1,7 @@
 export const handleDownloadResume = async () => {
   try {
     const fileUrl =
-      'https://drive.google.com/uc?export=download&id=1B_Y8yuKqnmZ-qWGWFkRWkC3WY_P_0rvw';
+      'https://drive.google.com/uc?export=download&id=1vobTwzcEpD6c0uYnt3nEAMXUEkFytvbq';
 
     const link = document.createElement('a');
     link.href = fileUrl;
